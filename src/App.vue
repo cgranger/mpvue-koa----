@@ -7,5 +7,14 @@ export default {
 </script>
 
 <style>
-  
+.text-priamry{
+  color:#EA5149;
+}
+.text-footer{
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+  margin-bottom:5px;
+}
 </style>
+

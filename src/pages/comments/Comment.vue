@@ -1,20 +1,19 @@
 <template>
-    <div class="comment-wrap">
-        内容区
-    </div>
+    <section class="comments-wrap">
+        详情页
+    </section>
 </template>
 
 <script>
 export default {
   data () {
+    return {
 
+    }
   }
 }
 </script>
 
-<style>
-    .comment-wrap{
-        width:100%;
-        height: 100%;
-    }
+<style lang="scss">
+
 </style>

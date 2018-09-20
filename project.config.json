@@ -11,7 +11,7 @@
 	"compileType": "miniprogram",
 	"qcloudRoot": "./server",
 	"appid": "wxdb1254abc1df006a",
-	"projectname": "my-project",
+	"projectname": "mpvue%2Bkoa",
 	"libVersion": "2.2.3",
 	"condition": {
 		"search": {

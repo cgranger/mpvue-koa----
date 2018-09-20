@@ -12,8 +12,7 @@
 <script>
 // import qcloud from 'wafer2-client-sdk'
 import YearProgress from '@/components/YearProgress'
-import { showToast, post} from '../../utils/index'
-import config from '@/config'
+import {post, showModal} from '../../utils/index'
 export default {
   components: {
     YearProgress
@@ -45,7 +44,6 @@ export default {
     // 去登录
     goLogin () {
       let user = wx.getStorageSync('userinfo')
-      const self = this
       if (!user) {
         wx.getSetting({
           success: res => {

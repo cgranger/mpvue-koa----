@@ -1,20 +1,22 @@
 <template>
-    <div class="detail-wrap">
-        详情页面
-    </div>
+    <section class="detail-wrap">
+        {{bookid}}
+    </section>
 </template>
 
 <script>
 export default {
   data () {
-
+    return {
+      bookid: ''
+    }
+  },
+  mounted () {
+    this.bookid = this.$root.$mp.query.id
   }
 }
 </script>
 
-<style>
-    .detail-wrap{
-        width:100%;
-        height: 100%;
-    }
+<style lang="scss">
+
 </style>
