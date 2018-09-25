@@ -1,7 +1,7 @@
 <template>
   <a :href="detailUrl">
     <div class="card-wrap">
-      <div class="card-thumb">
+      <div class="card-thumb" @click.stop="preview">
         <img :src="book.image" mode="aspectFit" class="card-image">
       </div>
       <div class="card-detail">
@@ -43,13 +43,21 @@ export default {
   },
   props: ['book'],
   computed: {
-    detailUrl () {
+    detailUrl() {
       return '/pages/detail/main?id=' + this.book.id
     }
   },
-  data () {
+  data() {
     return {
 
+    }
+  },
+  methods: {
+    preview() {
+      wx.previewImage({
+        current: this.book.image,
+        urls: [this.book.image]
+      })
     }
   }
 }
