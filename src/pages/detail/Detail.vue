@@ -1,23 +1,33 @@
 <template>
   <section class="detail-wrap">
-    {{bookid}}
+    <BookInfo :info="info"></BookInfo>
   </section>
 </template>
 
 <script>
-import {get} from '../../utils/index'
+import { get } from '../../utils/index'
+import BookInfo from '@/components/BookInfo'
 export default {
+  components: {
+    BookInfo
+  },
   data() {
     return {
-      bookid: ''
+      bookid: '',
+      info: {}
     }
   },
   methods: {
-    async getDetail(){
-      const info = await get('/weapp/bookdetail',{id:this.bookid})
+    async getDetail() {
+      const info = await get('/weapp/bookdetail', { id: this.bookid });
+      this.info = info;
+      console.log(this.info,999)
+      wx.setNavigationBarTitle({
+        title: info.title
+      })
     }
   },
-  mounted () {
+  mounted() {
     this.bookid = this.$root.$mp.query.id
     this.getDetail()
   }
